@@ -53,7 +53,7 @@ public class MPGenerator {
 
     @Test
     public void generateCode() {
-        String[] tableNames = new String[]{"t_qrtz_console"};
+        String[] tableNames = new String[]{"t_weimob_user_relation"};
         generateByTables(tableNames);
     }
 
@@ -70,8 +70,13 @@ public class MPGenerator {
         GlobalConfig config = new GlobalConfig();
 
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
-        dataSourceConfig.setDbType(DbType.MYSQL)
-                .setUrl(dbUrl)
+        dataSourceConfig.setDbType(DbType.MYSQL);
+        if(dbUrl.startsWith("jdbc:sqlserver://"))
+            dataSourceConfig.setDbType(DbType.SQL_SERVER);
+        if(dbUrl.startsWith("jdbc:oracle:thin:"))
+            dataSourceConfig.setDbType(DbType.ORACLE);
+
+        dataSourceConfig.setUrl(dbUrl)
                 .setUsername(dbUser)
                 .setPassword(dbPwd)
                 .setTypeConvert(new MySqlTypeConvert() {

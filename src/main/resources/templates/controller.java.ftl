@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 
 import com.qjf.common.ResultMap;
 import com.qjf.demo.entity.${table.entityName};
-import com.qjf.demo.service.impl.${table.serviceImplName};
+import com.qjf.demo.service.${table.serviceName};
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ui.Model;
