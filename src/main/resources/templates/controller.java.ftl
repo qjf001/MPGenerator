@@ -117,7 +117,7 @@ public class ${table.controllerName}
      * @Date: ${date}
      * @Description: 删除
      */
-    @RequestMapping(value = "delete",method = RequestMethod.DELETE,produces = {"application/json;charset=UTF-8"})
+    @RequestMapping(value = "delete",method = RequestMethod.POST,produces = {"application/json;charset=UTF-8"})
     @ResponseBody
     public Map delete(Integer id) {
         ResultMap rm = new ResultMap();
