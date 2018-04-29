@@ -12,6 +12,7 @@ import org.junit.Test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Properties;
 
 /**
@@ -53,12 +54,12 @@ public class MPGenerator {
 
     @Test
     public void generateCode() {
-        String[] tableNames = new String[]{"t_weimob_user_relation"};
+        String[] tableNames = new String[]{"city"};
         generateByTables(tableNames);
     }
 
     private void generateByTables(String[] tableNames) {
-        generateByTables(packageName, "t_", tableNames);
+        generateByTables(packageName, "", tableNames);
     }
 
     private void generateByTables(String packageName, String prefix, String... tableNames) {
